@@ -1,0 +1,586 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mood log",
+      "intents": [
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "createMeasureIntent",
+          "slots": [
+            {
+              "name": "measure_stress",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "it is {measure_stress}",
+                "{measure_stress}"
+              ]
+            },
+            {
+              "name": "measure_nervousness",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_nervousness}"
+              ]
+            },
+            {
+              "name": "measure_impulsiveness",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_impulsiveness}"
+              ]
+            },
+            {
+              "name": "measure_optimism",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_optimism}"
+              ]
+            },
+            {
+              "name": "measure_productiveness",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_productiveness}"
+              ]
+            },
+            {
+              "name": "measure_energy",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_energy}"
+              ]
+            },
+            {
+              "name": "measure_sociability",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_sociability}"
+              ]
+            },
+            {
+              "name": "measure_clearheadedness",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_clearheadedness}"
+              ]
+            },
+            {
+              "name": "measure_regret",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_regret}"
+              ]
+            },
+            {
+              "name": "measure_happiness",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{measure_happiness}"
+              ]
+            }
+          ],
+          "samples": [
+            "please log my mood",
+            "log",
+            "log my mood",
+            "please record my mood",
+            "record",
+            "record my mood",
+            "i would like to record my mood"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "createMeasureIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "measure_stress",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.213809376756.220540544529"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.213809376756.220540544529.1017995300089",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_nervousness",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.213809376756.1371982245837"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1274723931835.299397393693.1146152825483",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_impulsiveness",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.213809376756.80692197901"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1274723931835.1515091572102.57488549359",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_optimism",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.213809376756.823087966207"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1274723931835.547105736974.296044915985",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_productiveness",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.213809376756.1467247538465"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1272310243052.253767733367.50353918766",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_energy",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.213809376756.299522968167"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1519080771685.436849631253.503237250324",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_sociability",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.998400320204.171870785112"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.442934823982.1520648492309.152843436741",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_clearheadedness",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.998400320204.895461332454"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.642152776802.922446670802.462496200188",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_regret",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.998400320204.652408382171"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.1473343807104.582907164282.999519474636",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "measure_happiness",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.998400320204.1407642299160"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.188877274182.851927276666.1358567390396",
+                  "values": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.213809376756.220540544529.1017995300089",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.213809376756.220540544529",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What has been your stress level today?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.213809376756.1467247538465",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How productive have you been today?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.213809376756.299522968167",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What has been your overall energy level for the day?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.213809376756.823087966207",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How optimistic do you feel?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.213809376756.80692197901",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How impulsive have you been today?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.213809376756.1371982245837",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What has been your overall level of nervousness?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.998400320204.171870785112",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How sociable have you been today?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.998400320204.895461332454",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How clearheaded have you felt throughout the day?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.998400320204.652408382171",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How much regret do you feel about the day?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.998400320204.1407642299160",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How happy are you?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1274723931835.299397393693.1146152825483",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1274723931835.1515091572102.57488549359",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1274723931835.547105736974.296044915985",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1272310243052.253767733367.50353918766",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1519080771685.436849631253.503237250324",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.442934823982.1520648492309.152843436741",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.642152776802.922446670802.462496200188",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1473343807104.582907164282.999519474636",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.188877274182.851927276666.1358567390396",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please answer a whole number between zero and ten"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "19"
+}
