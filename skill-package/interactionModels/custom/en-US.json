@@ -103,6 +103,23 @@
             "record my mood",
             "i would like to record my mood"
           ]
+        },
+        {
+          "name": "createNoteIntent",
+          "slots": [
+            {
+              "name": "note",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{note}"
+              ]
+            }
+          ],
+          "samples": [
+            "record a note",
+            "log a note",
+            "create a note"
+          ]
         }
       ],
       "types": []
@@ -395,6 +412,22 @@
               ]
             }
           ]
+        },
+        {
+          "name": "createNoteIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "note",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.240720025395.116955740248"
+              }
+            }
+          ]
         }
       ],
       "delegationStrategy": "ALWAYS"
@@ -579,8 +612,17 @@
             "value": "please answer a whole number between zero and ten"
           }
         ]
+      },
+      {
+        "id": "Elicit.Slot.240720025395.116955740248",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What would you like to record in your note?"
+          }
+        ]
       }
     ]
   },
-  "version": "19"
+  "version": "52"
 }
