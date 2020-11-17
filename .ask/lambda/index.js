@@ -3,8 +3,9 @@
 // Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
-const MeasureIntent = require('./intents/createMeasure');
-const NoteIntent = require('./intents/createNote');
+const CreateMeasureIntent = require('./intents/createMeasure');
+const CreateNoteIntent = require('./intents/createNote');
+const GetLastRecordDateIntent = require('./intents/getLastRecordDate');
 
 const LaunchRequestHandler = {
     // canHandle()
@@ -18,7 +19,7 @@ const LaunchRequestHandler = {
     // This method contains the handler's request processing logic. 
     // Accepts HandlerInput and returns a Response or Promise<Response>.
     handle(handlerInput) {
-        const speakOutput = 'Welcome to Mood Log. You can say Record My Mood to start recording.';
+        const speakOutput = 'Welcome to Mood Log. You can say Record My Mood to start recording, or say Create A Note to create a brief note about today. Say Help for more options.';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
@@ -44,7 +45,7 @@ const HelpIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'You can say hello to me! How can I help?';
+        const speakOutput = 'Here are some things you can say. You can say Summarize to hear a brief summary of your recent logs. You can also ask me When Was My Last Log.';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -120,10 +121,11 @@ exports.handler = Alexa.SkillBuilders.custom()
         // Register request handlers.
         LaunchRequestHandler,
         HelloWorldIntentHandler,
-        MeasureIntent.InProgressIntentHandler,
-        MeasureIntent.IntentHandler,
-        NoteIntent.InProgressIntentHandler,
-        NoteIntent.IntentHandler,
+        CreateMeasureIntent.InProgressIntentHandler,
+        CreateMeasureIntent.IntentHandler,
+        CreateNoteIntent.InProgressIntentHandler,
+        CreateNoteIntent.IntentHandler,
+        GetLastRecordDateIntent.IntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
@@ -133,3 +135,17 @@ exports.handler = Alexa.SkillBuilders.custom()
         ErrorHandler,
     )
     .lambda();
+
+const dateFormat = require('dateformat');
+const helper = require('./helper');
+const testUserId = 'amzn1.ask.account.AHBE7GEJAVGQLWRAU3YKUEZ6EQ6YK22JDOK77YU3LTTMP7Y66VTLWGV4TLYQKI5QVBZS3DXK6UHAI5FRZ6355I7LOB635KNZGGPBGYSSVKID4J556XYZHFMTZU6N6TEPEEL2FZWN5F2PKFT67JVPE3ODPJ566QQ7EQ7YPZWWG47NJMN3X6UO7ATTIL4EIAMGZ7PJWVFB3KMGVUI';
+
+(async () => {
+    const date = await helper.getLatestLogDate(testUserId);
+    const hour24 = dateFormat(date, 'H');
+    const hour12 = dateFormat(date, 'h');
+    const min = dateFormat(date, 'M');
+
+    const ampm = hour24 > "12" ? "P.M." : "A.M."
+    console.log(`${hour12}:${min} ${ampm}`);
+})();

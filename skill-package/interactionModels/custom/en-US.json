@@ -120,6 +120,17 @@
             "log a note",
             "create a note"
           ]
+        },
+        {
+          "name": "getLastRecordDateIntent",
+          "slots": [],
+          "samples": [
+            "when was my last record",
+            "when did i create a log last",
+            "when did i last create a log",
+            "when did i last log",
+            "when was my last log"
+          ]
         }
       ],
       "types": []
@@ -624,5 +635,5 @@
       }
     ]
   },
-  "version": "52"
+  "version": "53"
 }
